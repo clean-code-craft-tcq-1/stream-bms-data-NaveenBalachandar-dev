@@ -17,11 +17,11 @@ static Void SendToConsloe(float temp ,float chargestat)
 Printf("Yet to be printed");
 }
 
-Void  main()
+void  main()
 {
   float temp = 11.5;
   float chargeset = 15;
-  SendToConsloe(temp ,chargestat)
+  SendToConsloe(temp ,chargestat);
 }
 
 
