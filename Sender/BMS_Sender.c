@@ -1,9 +1,9 @@
-/*****************************************************************************/
-/***    \file        BMS_Sender.c
-***     \author      Naveen Balachandar (RBEI/ECK3) 
-***
-***     \brief       File to monitor the battery condition based required properties
-/*****************************************************************************/
+/*--------------------------------------------------------------------------------
+---    \file       BMS_Sender.c
+---   \author      Naveen Balachandar (RBEI/ECK3) 
+---
+---     \brief       File to monitor the battery condition based required properties
+------------------------------------------------------------------------------------*/
 /*------ standard includes -------*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,14 +15,14 @@ int readInpDataFile(void)
 {
   
 FILE *fptr;
-float c;
+char c;
 
 fptr=fopen("Inputdata.txt","r");
 if (fptr != NULL) 
 {
  while ((c = getc(fptr)) != EOF)
  {
-  putchar(c);
+  printf("data read%c",c);
  }       
   fclose(fptr);
 }   
