@@ -7,3 +7,6 @@
 /*------ standard includes -------*/
 
 #include <stdio.h>
+
+/*Function to send ouput to console*/
+Void SendToConsloe(float temp ,float chargestat);
