@@ -9,4 +9,4 @@
 /*Function to send ouput to console*/
 int readInpDataFile(void);
 /*Function to send ouput to console*/
-void sendDataToConsloe(float temp ,float chargeRate);
+void sendDataToConsole(float temp ,float chargeRate);
