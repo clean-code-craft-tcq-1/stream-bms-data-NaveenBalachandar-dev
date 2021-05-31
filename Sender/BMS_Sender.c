@@ -20,11 +20,11 @@ float c;
 fptr=fopen("Inputdata.txt","r");
 if (fptr ! =NULL) 
 {
- while ((c = getc(file)) != EOF)
+ while ((c = getc(fptr)) != EOF)
  {
   putchar(c);
  }       
-    fclose(file)
+    fclose(fptr)
 }   
    return 0;
 
