@@ -7,21 +7,17 @@
 /*------ standard includes -------*/
 
 #include <stdio.h>
+#include "BMS_Sender.h"
 
-/*Function to send ouput to console*/
-static void SendToConsloe(float temp ,float chargeset);
-
-
-static void SendToConsloe(float temp ,float chargeset)
+void sendDataToConsloe(float temp ,float chargeRate)
 {
-printf("Yet to be printed");
+printf("Temperature:%f;chargeRate:%f",temp,chargeRate);
 }
 
 int  main()
 {
   float temp = 11.5;
-  float chargeset = 15.5;
-  SendToConsloe(temp ,chargeset);
+  float chargeRate = 15.5;
+  sendDataToConsloe(temp ,chargeRate);
   return 0;
-  
 }
