@@ -21,7 +21,7 @@ int readInpDataFile(void)
   int i;
   float TempRead ,ChargerateRead;
   /*Read the input file*/
-  fptr=fopen("Inputdata.txt","r");
+  fptr=fopen("Sender/Inputdata.txt","r");
   if (fptr != NULL) 
   {
      for(i=0;i<30;i++)
