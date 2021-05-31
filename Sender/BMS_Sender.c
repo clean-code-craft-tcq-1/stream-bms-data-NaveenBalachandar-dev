@@ -45,7 +45,7 @@ int readInpDataFile(void)
 
 void sendDataToConsole(float temp ,float chargeRate)
 {
-printf("Temperature:%5.2f;chargeRate:%5.2f",temp,chargeRate);
+printf("Temperature:%f;chargeRate:%5.2f\n",temp,chargeRate);
 }
 
 
