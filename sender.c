@@ -9,19 +9,20 @@
 #include <stdio.h>
 
 /*Function to send ouput to console*/
-static Void SendToConsloe(float temp ,float chargestat);
+static void SendToConsloe(float temp ,float chargestat);
 
 
-static Void SendToConsloe(float temp ,float chargestat)
+static void SendToConsloe(float temp ,float chargestat)
 {
-Printf("Yet to be printed");
+printf("Yet to be printed");
 }
 
-void  main()
+int  main()
 {
   float temp = 11.5;
   float chargeset = 15;
   SendToConsloe(temp ,chargestat);
+  return 0;
 }
 
 
