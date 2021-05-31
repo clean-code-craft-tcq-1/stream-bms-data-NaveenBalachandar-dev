@@ -24,12 +24,13 @@ int readInpDataFile(void)
   fptr=fopen("Sender/Inputdata.txt","r");
   if (fptr != NULL) 
   { 
-    while(fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead); != EOF)
-    {
-      ++k;
-    }
-     for(i=0;i<k;i++)
+   // while(fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead) != EOF)
+   // {
+     // ++k;
+    //}
+     for(i=0;i<30;i++)
      {
+       fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead)
        //temp[i] =TempRead;
       // ChargeRate[i] =ChargerateRead;
        sendDataToConsole(TempRead,ChargerateRead);
