@@ -18,13 +18,13 @@ FILE *fptr;
 float c;
 
 fptr=fopen("Inputdata.txt","r");
-if (fptr ! =NULL) 
+if (fptr != NULL) 
 {
  while ((c = getc(fptr)) != EOF)
  {
   putchar(c);
  }       
-    fclose(fptr)
+  fclose(fptr);
 }   
    return 0;
 
