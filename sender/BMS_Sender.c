@@ -9,4 +9,19 @@
 #include <stdio.h>
 
 /*Function to send ouput to console*/
-Void SendToConsloe(float temp ,float chargestat);
+static Void SendToConsloe(float temp ,float chargestat);
+
+
+static Void SendToConsloe(float temp ,float chargestat)
+{
+Printf("Yet to be printed");
+}
+
+Void  main()
+{
+  float temp = 11.5;
+  float chargeset = 15;
+  SendToConsloe(temp ,chargestat)
+}
+
+
