@@ -30,7 +30,7 @@ int readInpDataFile(void)
     //}
      for(i=0;i<30;i++)
      {
-       fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead)
+       fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead);
        //temp[i] =TempRead;
       // ChargeRate[i] =ChargerateRead;
        sendDataToConsole(TempRead,ChargerateRead);
