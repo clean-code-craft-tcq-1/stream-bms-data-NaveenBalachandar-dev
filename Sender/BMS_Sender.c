@@ -11,24 +11,36 @@
 /*------ Project includes -------*/
 #include "BMS_Sender.h"
 
+/*Arrays to store file data*/
+static float temp[30];
+static float ChargeRate[30];
+
 int readInpDataFile(void)
 {
-  
-FILE *fptr;
-char c;
-
-fptr=fopen("Inputdata.txt","r");
-if (fptr != NULL) 
-{
- while ((c = getc(fptr)) != EOF)
- {
-  printf("data read%c",c);
- }       
-  fclose(fptr);
-}   
-   return 0;
-
-}  
+  FILE *fptr;
+  int i;
+  float TempRead ,ChargerateRead;
+  /*Read the input file*/
+  fptr=fopen("Inputdata.txt","r");
+  if (fptr != NULL) 
+  {
+     for(i=0;i<30;i++)
+     {
+      fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead);
+       temp[i] =TempRead;
+       ChargeRate[i] =ChargerateRead;
+       sendDataToConsole(TempRead,ChargerateRead);
+     }
+     /*Close the file*/
+     fclose(fptr);
+  }
+  else
+  {
+   printf("File access error");
+  }  
+ 
+  return 0;
+ }  
 
 
 void sendDataToConsole(float temp ,float chargeRate)
@@ -39,9 +51,6 @@ printf("Temperature:%5.2f;chargeRate:%5.2f",temp,chargeRate);
 
 int  main()
 {
-  float temp = 11.5;
-  float chargeRate = 15.5;
   readInpDataFile();
-  sendDataToConsole(temp ,chargeRate);
   return 0;
 }
