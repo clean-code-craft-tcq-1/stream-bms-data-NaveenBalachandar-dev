@@ -9,9 +9,9 @@
 #include <stdio.h>
 #include "BMS_Sender.h"
 
-void sendDataToConsloe(float temp ,float chargeRate)
+void sendDataToConsole(float temp ,float chargeRate)
 {
-printf("Temperature:%f;chargeRate:%f",temp,chargeRate);
+printf("Temperature:%5.2f;chargeRate:%5.2f",temp,chargeRate);
 }
 
 int  main()
