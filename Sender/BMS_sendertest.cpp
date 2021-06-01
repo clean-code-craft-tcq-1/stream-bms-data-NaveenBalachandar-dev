@@ -12,3 +12,16 @@ TEST_CASE("validate that O/P fed to console") {
   REQUIRE(AlertTestStat.ConsoleSentStatus   == SENT_TO_CONSOLE);
 
 }
+
+TEST_CASE("validate that file read") 
+{
+	
+	Alert_Status_s AlertTestStat = {NOT_SENT,FILE_ACCESS_FAILURE};
+  
+	AlertTestStat = readInpDataFile();
+	
+       REQUIRE(AlertTestStat.FileReadStatus   == FILE_ACCESS_SUCCESS);
+       REQUIRE(AlertTestStat.ConsoleSentStatus   == SENT_TO_CONSOLE);
+
+}
+
