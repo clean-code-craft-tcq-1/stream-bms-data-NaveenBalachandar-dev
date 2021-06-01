@@ -27,6 +27,6 @@ typedef struct {
 }Alert_Status_s;
 
 /*Function to send ouput to console*/
-int readInpDataFile(void);
+Alert_Status_s readInpDataFile(void);
 /*Function to send ouput to console*/
-void sendDataToConsole(float temp ,float chargeRate);
+Alert_Status_s sendDataToConsole(float temp ,float chargeRate);
