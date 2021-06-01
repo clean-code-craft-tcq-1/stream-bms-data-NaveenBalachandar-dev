@@ -16,7 +16,7 @@ Alert_Status_s AlertStat = {NOT_SENT,FILE_ACCESS_FAILURE};
 //static float temp[30];
 //static float ChargeRate[30];
 
-int readInpDataFile(void)
+Alert_Status_s  readInpDataFile(void)
 {
   FILE *fptr;
   int index;
@@ -42,15 +42,16 @@ int readInpDataFile(void)
    AlertStat.FileReadStatus = FILE_ACCESS_FAILURE; 
   }  
  
-  return 0;
+  return AlertStat;;
  }  
 
 
-void sendDataToConsole(float temp ,float chargeRate)
+Alert_Status_s  sendDataToConsole(float temp ,float chargeRate)
 {
 /*Prints temp and charge rate that read from file*/  
  printf("%5.2f;%5.2f\n",temp,chargeRate);
  AlertStat.ConsoleSentStatus = SENT_TO_CONSOLE;
+ return AlertStat; 
 }
 
 
