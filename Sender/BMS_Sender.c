@@ -22,11 +22,9 @@ Alert_Status_s  readInpDataFile(void)
   int index;
   float TempRead ,ChargerateRead;
   /*Read the input file*/
-  #ifndef UNIT_TESTING
+ 
   fptr=fopen("Sender/Inputdata.txt","r");
-  #else
-  fptr= testFileRead();
-  #endif
+
   if (fptr != NULL) 
   { 
      for(index=0;fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead) != EOF;index++)
