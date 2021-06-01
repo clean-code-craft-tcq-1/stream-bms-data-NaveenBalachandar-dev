@@ -18,11 +18,6 @@ typedef enum {
  FILE_ACCESS_FAILURE
 }FileReadStatus_t;
 
-typedef enum {
- DATA_MATCHING,
- DATA_NOT_MATCHING
-}DataValidStatus_t;
-
 typedef struct {
 		ConsoleSentStatus_t ConsoleSentStatus;
 		FileReadStatus_t FileReadStatus;
