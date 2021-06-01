@@ -5,6 +5,8 @@
 ***     \brief       Header for BMS parameter streaming project
 /*****************************************************************************/
 
+/*Unit testing defintion macro needs to be enabled for testing  */
+#define UNIT_TESTING 
 /*enums used forUnit testing*/
 typedef enum {
  SENT_TO_CONSOLE,
