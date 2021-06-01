@@ -44,8 +44,8 @@ int readInpDataFile(void)
 
 void sendDataToConsole(float temp ,float chargeRate)
 {
-/*Prints temp and charge rate read from file*/  
- printf("Temp:%5.2f;Chgrt:%5.2f\n",temp,chargeRate);
+/*Prints temp and charge rate that read from file*/  
+ printf("%5.2f;%5.2f\n",temp,chargeRate);
 }
 
 
