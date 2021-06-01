@@ -2,7 +2,7 @@
 ---    \file       BMS_Sender.c
 ---   \author      Naveen Balachandar (RBEI/ECK3) 
 ---
----     \brief       File to monitor the battery condition based required properties
+---     \brief     proj file to stream BMS data
 ------------------------------------------------------------------------------------*/
 /*------ standard includes -------*/
 #include <stdio.h>
