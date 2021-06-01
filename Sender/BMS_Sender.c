@@ -54,7 +54,7 @@ Alert_Status_s  sendDataToConsole(float temp ,float chargeRate)
  return AlertStat; 
 }
 
-#ifndef UNIT_TEST
+#ifndef UNIT_TESTING
 int  main()
 {
   readInpDataFile();
