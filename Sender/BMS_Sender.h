@@ -1,9 +1,9 @@
-/*****************************************************************************/
-/***    \file        BMS_Sender.h
-***     \author      Naveen Balachandar (RBEI/ECK3) 
-***
-***     \brief       Header for BMS parameter streaming project
-/*****************************************************************************/
+/*--------------------------------------------------------------------------------
+---    \file       BMS_Sender.c
+---   \author      Naveen Balachandar (RBEI/ECK3) 
+---
+---     \brief     header file to stream BMS data
+------------------------------------------------------------------------------------*/
 
 /*Unit testing defintion macro needs to be enabled for testing  */
 #define UNIT_TESTING 
