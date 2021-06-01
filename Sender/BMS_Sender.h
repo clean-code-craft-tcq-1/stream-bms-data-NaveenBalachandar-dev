@@ -21,6 +21,11 @@ typedef enum {
  DATA_NOT_MATCHING
 }DataValidStatus_t;
 
+typedef struct {
+		ConsoleSentStatus_t ConsoleSentStatus;
+		FileReadStatus_t FileReadStatus;
+}Alert_Status_s;
+
 /*Function to send ouput to console*/
 int readInpDataFile(void);
 /*Function to send ouput to console*/
