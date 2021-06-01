@@ -18,19 +18,14 @@
 int readInpDataFile(void)
 {
   FILE *fptr;
-  int i;
+  int index;
   float TempRead ,ChargerateRead;
   /*Read the input file*/
   fptr=fopen("Sender/Inputdata.txt","r");
   if (fptr != NULL) 
   { 
-   // while(fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead) != EOF)
-   // {
-     // ++k;
-    //}
-     for(i=0;i<30;i++)
+     for(index=0;fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead) != EOF;index++)
      {
-       fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead);
        //temp[i] =TempRead;
       // ChargeRate[i] =ChargerateRead;
        sendDataToConsole(TempRead,ChargerateRead);
