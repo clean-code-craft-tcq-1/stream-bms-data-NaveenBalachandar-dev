@@ -46,9 +46,9 @@ streamAlert_Status_s  streamFileInpData(char *inpFilePath)
   }
   else
   {
-      printf("File access error and No output in console");
-      streamAlertStat.ConsoleSentStatus = NOT_SENT; 
+      printf("File access error and No output in console\n"); 
       streamAlertStat.FileReadStatus = FILE_ACCESS_FAILURE; 
+      streamAlertStat.ConsoleSentStatus = NOT_SENT;
   }  
  
    return streamAlertStat;;
@@ -65,7 +65,8 @@ streamAlert_Status_s  streamFileInpData(char *inpFilePath)
 *//*------------------------------------------------------------------------*/
 streamAlert_Status_s  sendDataToConsole(float temp ,float chargeRate)
 {
-   /*Prints temp and charge rate that read from file*/  
+   /*Prints temp and charge rate that read from file*/ 
+   printf("Data Read from file\n");
    printf("%5.2f;%5.2f\n",temp,chargeRate);
    /*Print mgs status*/  
    streamAlertStat.ConsoleSentStatus = SENT_TO_CONSOLE;
@@ -78,7 +79,7 @@ streamAlert_Status_s  sendDataToConsole(float temp ,float chargeRate)
 #ifndef UNIT_TESTING
 int  main()
 {
-  
+  /*File path used for streaming*/
   char inpFilePath[50] = "Sender/Inputdata.txt";
   /* BMS data stream request from file mnetioned above*/
   streamFileInpData(inpFilePath);
