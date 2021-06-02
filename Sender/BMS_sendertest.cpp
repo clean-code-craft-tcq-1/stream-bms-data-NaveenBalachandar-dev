@@ -3,25 +3,36 @@
 #include "../test/catch.hpp"
 #include "BMS_Sender.h"
 
-TEST_CASE("validate that O/P fed to console") {
+TEST_CASE("validate that O/P fed to console") 
+{
+    streamAlert_Status_s streamAlertTestStat = {NOT_SENT,FILE_ACCESS_FAILURE};
+    streamAlertTestStat = sendDataToConsole(11.5, 0.7);
 	
-	Alert_Status_s AlertTestStat = {NOT_SENT,FILE_ACCESS_FAILURE};
-  
-	AlertTestStat = sendDataToConsole(11.5, 0.7);
-	
-  REQUIRE(AlertTestStat.ConsoleSentStatus   == SENT_TO_CONSOLE);
+    REQUIRE(streamAlertTestStat.ConsoleSentStatus   == SENT_TO_CONSOLE);
 
 }
 
-TEST_CASE("validate that file read") 
+TEST_CASE("validate that file read and stream data with invalid valid path") 
 {
+    streamAlert_Status_s streamAlertTestStat = {SENT_TO_CONSOLE,FILE_ACCESS_SUCCESS};
+    char testFilePath[50] = "Inputdata.txt";
+ 
+    streamAlertTestStat = streamFileInpData(testFilePath);
 	
-	Alert_Status_s AlertTestStat = {NOT_SENT,FILE_ACCESS_FAILURE};
-  
-	AlertTestStat = readInpDataFile();
+     REQUIRE(streamAlertTestStat.FileReadStatus   == FILE_ACCESS_FAILURE);
+     REQUIRE(streamAlertTestStat.ConsoleSentStatus   == NOT_SENT);
+
+}
+
+TEST_CASE("validate that file read and stream data with valid path") 
+{
+    streamAlert_Status_s streamAlertTestStat = {NOT_SENT,FILE_ACCESS_FAILURE};
+    char testFilePath[50] = "Sender/Inputdata.txt";
+ 
+     streamAlertTestStat = streamFileInpData(testFilePath);
 	
-       REQUIRE(AlertTestStat.FileReadStatus   == FILE_ACCESS_SUCCESS);
-       REQUIRE(AlertTestStat.ConsoleSentStatus   == SENT_TO_CONSOLE);
+     REQUIRE(streamAlertTestStat.FileReadStatus   == FILE_ACCESS_SUCCESS);
+     REQUIRE(streamAlertTestStat.ConsoleSentStatus   == SENT_TO_CONSOLE);
 
 }
 
