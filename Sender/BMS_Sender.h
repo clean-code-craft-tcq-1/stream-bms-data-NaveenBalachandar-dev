@@ -23,7 +23,7 @@ typedef struct {
 		FileReadStatus_t FileReadStatus;
 }streamAlert_Status_s;
 
-/*Function to read and stream file datae*/
-streamAlert_Status_s streamFileInpData(void);
+/*Function to read and stream file datA*/
+streamAlert_Status_s streamFileInpData(char const* inpFilePath);
 /*Function to send ouput to console*/
 streamAlert_Status_s sendDataToConsole(float temp ,float chargeRate);
