@@ -7,7 +7,7 @@
 
 /*Unit testing defintion macro needs to be enabled for testing  */
 #define UNIT_TESTING 
-/*enums used forUnit testing*/
+/*enums used for Unit testing*/
 typedef enum {
  SENT_TO_CONSOLE,
  NOT_SENT
@@ -23,7 +23,7 @@ typedef struct {
 		FileReadStatus_t FileReadStatus;
 }streamAlert_Status_s;
 
-/*Function to read and stream file datA*/
+/*Function to read and stream file data*/
 streamAlert_Status_s streamFileInpData(char *inpFilePath);
 /*Function to send ouput to console*/
 streamAlert_Status_s sendDataToConsole(float temp ,float chargeRate);
