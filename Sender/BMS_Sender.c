@@ -35,7 +35,7 @@ streamAlert_Status_s  streamFileInpData(void)
   { 
      /*msg that file access is success*/
      streamAlertStat.FileReadStatus = FILE_ACCESS_SUCCESS; 
-     for(dataIndex_ui=0;fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead) != EOF;dataIndex_ui++)
+     for(dataIndex_ui=0;fscanf(fptr,"%f\t%f", &tempRead,&chargerateRead) != EOF;dataIndex_ui++)
      {
        /*Req to print the data read from file in console*/
        sendDataToConsole(tempRead,chargerateRead);
