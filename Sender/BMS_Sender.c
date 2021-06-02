@@ -29,7 +29,7 @@ streamAlert_Status_s  streamFileInpData(char *inpFilePath)
   unsigned int dataIndex_ui;
   float tempRead ,chargerateRead;
   /*Read the input file*/
-  fptr =fopen("Sender/Inputdata.txt","r");
+  fptr =fopen(inpFilePath,"r");
 
   if ( NULL != fptr) /*validating file access*/
   { 
