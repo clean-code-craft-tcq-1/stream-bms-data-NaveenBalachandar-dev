@@ -11,55 +11,77 @@
 /*------ Project includes -------*/
 #include "BMS_Sender.h"
 
-Alert_Status_s AlertStat = {NOT_SENT,FILE_ACCESS_FAILURE};
-/*Arrays to store file data*/
-//static float temp[30];
-//static float ChargeRate[30];
+/*Intial states of operation*/
+streamAlert_Status_s streamAlertStat = {NOT_SENT,FILE_ACCESS_FAILURE};
 
-Alert_Status_s  readInpDataFile(void)
+/*---------------------------------------------------------------------------*/
+/*     FUNCTION:    streamFileInpData
+ */
+/*!    \brief        read input data from file and stream continuosly
+ * 
+ *     \param       None
+ *     \returns     streamAlert_Status_s -success/fail
+ *
+*//*------------------------------------------------------------------------*/
+streamAlert_Status_s  streamFileInpData(void)
 {
   FILE *fptr;
-  int index;
-  float TempRead ,ChargerateRead;
+  unsigned int dataIndex_ui;
+  float tempRead ,chargerateRead;
   /*Read the input file*/
- 
-  fptr=fopen("Sender/Inputdata.txt","r");
+  fptr =fopen("Sender/Inputdata.txt","r");
 
-  if (fptr != NULL) 
+  if ( NULL != fptr) /*validating file access*/
   { 
-     for(index=0;fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead) != EOF;index++)
+     /*msg that file access is success*/
+     streamAlertStat.FileReadStatus = FILE_ACCESS_SUCCESS; 
+     for(dataIndex_ui=0;fscanf(fptr,"%f\t%f", &TempRead,&ChargerateRead) != EOF;dataIndex_ui++)
      {
-       //temp[i] =TempRead;
-      // ChargeRate[i] =ChargerateRead;
-       sendDataToConsole(TempRead,ChargerateRead);
+       /*Req to print the data read from file in console*/
+       sendDataToConsole(tempRead,chargerateRead);
      }
      /*Close the file*/
      fclose(fptr);
-     AlertStat.FileReadStatus = FILE_ACCESS_SUCCESS; 
+     
   }
   else
   {
-   printf("File access error");
-   AlertStat.ConsoleSentStatus = NOT_SENT; 
-   AlertStat.FileReadStatus = FILE_ACCESS_FAILURE; 
+      printf("File access error and No output in console");
+      streamAlertStat.ConsoleSentStatus = NOT_SENT; 
+      streamAlertStat.FileReadStatus = FILE_ACCESS_FAILURE; 
   }  
  
-  return AlertStat;;
+   return streamAlertStat;;
  }  
 
-
-Alert_Status_s  sendDataToConsole(float temp ,float chargeRate)
+/*---------------------------------------------------------------------------*/
+/*     FUNCTION:    sendDataToConsole
+ */
+/*!    \brief       send the data read from file continuosly
+ * 
+ *     \param        temp and chargerate
+ *     \returns     streamAlert_Status_s -
+ *
+*//*------------------------------------------------------------------------*/
+streamAlert_Status_s  sendDataToConsole(float temp ,float chargeRate)
 {
-/*Prints temp and charge rate that read from file*/  
- printf("%5.2f;%5.2f\n",temp,chargeRate);
- AlertStat.ConsoleSentStatus = SENT_TO_CONSOLE;
- return AlertStat; 
+   /*Prints temp and charge rate that read from file*/  
+   printf("%5.2f;%5.2f\n",temp,chargeRate);
+   /*Print mgs status*/  
+   streamAlertStat.ConsoleSentStatus = SENT_TO_CONSOLE;
+   return streamAlertStat; 
 }
 
+/*In current project stream sent from UT file 
+      if UT is disbaled then main shall be invoked (based on user choice) 
+*/
 #ifndef UNIT_TESTING
 int  main()
 {
-  readInpDataFile();
+  
+  char inpFilePath[50] = "Sender/Inputdata.txt";
+  /* BMS data stream request from file mnetioned above*/
+  streamFileInpData(inpFilePath);
   return 0;
 }
 #endif
