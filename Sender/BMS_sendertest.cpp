@@ -62,3 +62,4 @@ TEST_CASE("Test case 4 : validate that file read and stream data with valid file
     REQUIRE(streamAlertTestStat.ConsoleSentStatus   == SENT_TO_CONSOLE);
 }
 
+
