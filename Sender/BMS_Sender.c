@@ -35,6 +35,7 @@ streamAlert_Status_s  streamFileInpData(char *inpFilePath)
   { 
      /*msg that file access is success*/
      streamAlertStat.FileReadStatus = FILE_ACCESS_SUCCESS; 
+     printf("Data Read from file as follows\n");
      for(dataIndex_ui=0;fscanf(fptr,"%f\t%f", &tempRead,&chargerateRead) != EOF;dataIndex_ui++)
      {
        /*Req to print the data read from file in console*/
@@ -66,7 +67,6 @@ streamAlert_Status_s  streamFileInpData(char *inpFilePath)
 streamAlert_Status_s  sendDataToConsole(float temp ,float chargeRate)
 {
    /*Prints temp and charge rate that read from file*/ 
-   printf("Data Read from file\n");
    printf("%5.2f;%5.2f\n",temp,chargeRate);
    /*Print mgs status*/  
    streamAlertStat.ConsoleSentStatus = SENT_TO_CONSOLE;
