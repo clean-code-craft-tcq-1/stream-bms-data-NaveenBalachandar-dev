@@ -12,10 +12,10 @@ TEST_CASE("validate that O/P fed to console")
 
 }
 
-TEST_CASE("validate that file read and stream data with invalid valid path") 
+TEST_CASE("validate that file read and stream data with invalid file") 
 {
     streamAlert_Status_s streamAlertTestStat = {SENT_TO_CONSOLE,FILE_ACCESS_SUCCESS};
-    char testFilePath[50] = "Inputdata.txt";
+    char testFilePath[50] = "data.txt"; /*invalid file */
  
     streamAlertTestStat = streamFileInpData(testFilePath);
 	
