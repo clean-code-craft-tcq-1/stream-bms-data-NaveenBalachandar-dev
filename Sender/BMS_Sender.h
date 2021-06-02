@@ -21,9 +21,9 @@ typedef enum {
 typedef struct {
 		ConsoleSentStatus_t ConsoleSentStatus;
 		FileReadStatus_t FileReadStatus;
-}Alert_Status_s;
+}streamAlert_Status_s;
 
+/*Function to read and stream file datae*/
+streamAlert_Status_s streamFileInpData(void);
 /*Function to send ouput to console*/
-Alert_Status_s readInpDataFile(void);
-/*Function to send ouput to console*/
-Alert_Status_s sendDataToConsole(float temp ,float chargeRate);
+streamAlert_Status_s sendDataToConsole(float temp ,float chargeRate);
