@@ -23,7 +23,7 @@ streamAlert_Status_s streamAlertStat = {NOT_SENT,FILE_ACCESS_FAILURE};
  *     \returns     streamAlert_Status_s -success/fail
  *
 *//*------------------------------------------------------------------------*/
-streamAlert_Status_s  streamFileInpData(char const* inpFilePath)
+streamAlert_Status_s  streamFileInpData(char *inpFilePath)
 {
   FILE *fptr;
   unsigned int dataIndex_ui;
