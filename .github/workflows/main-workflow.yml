@@ -32,5 +32,9 @@ jobs:
         name: coverage
         path: ./target/site/jacoco
         retention-days: 1
+        
+    - name: Build C++
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker Sender/*.c*
+      
     - name: Build main
       run: ./testchecker | mvn compile exec:java -Dexec.mainClass="batteryevaluator.BatteryPropertyReceiverService"

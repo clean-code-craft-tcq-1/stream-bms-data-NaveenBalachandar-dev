@@ -9,14 +9,19 @@ import batteryevaluatorreporter.PropertyReporter;
 
 public class BatteryPropertyReceiverService {
 	public static void main(String args[]) {
+	
 		List<Float> socList = new ArrayList<Float>();
 		List<Float> chargeRateList = new ArrayList<Float>();
 		Battery battery = new Battery();
         BatteryPropertyEvaluator propertyEvaluator = new BatteryPropertyEvaluator();
         
 		 if (args.length > 0) {       
+			 	for (String consoleInput : args) {
+					String batteryProperties[] = consoleInput.split("; ");
+					socList.add(Float.valueOf(batteryProperties[0]));
+					chargeRateList.add(Float.valueOf(batteryProperties[1]));
+				}      
 			 
-	            extractBatteryPropertiesFromInput(args, socList, chargeRateList);          
 	            evaluateBatteryChargeRate(chargeRateList, battery, propertyEvaluator);
 	            evaluateBatterySoc(socList, battery, propertyEvaluator);
 	            
@@ -41,12 +46,4 @@ public class BatteryPropertyReceiverService {
 		battery.setMaxChargeRate(propertyEvaluator.getMaxChargeRateValue(chargeRateList));
 	}
 
-	private static void extractBatteryPropertiesFromInput(String[] args, List<Float> socList,
-			List<Float> chargeRateList) {
-		for (String consoleInput : args) {
-			String batteryProperties[] = consoleInput.split("; ");
-			socList.add(Float.valueOf(batteryProperties[0]));
-			chargeRateList.add(Float.valueOf(batteryProperties[1]));
-		}
-	}
 }
