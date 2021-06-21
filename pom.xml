@@ -3,16 +3,7 @@
   <groupId>BMSReceiver</groupId>
   <artifactId>BMSReceiver</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <configuration>
-        <archive>
-          <manifest>
-            <addClasspath>true</addClasspath>
-            <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>BMSReceiver</mainClass>
-          </manifest>
-        </archive>
-  </configuration>
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -22,6 +13,18 @@
   <build>
   	<plugins>
 	  <plugin>
+	        <groupId>BMSReceiver</groupId>
+		<artifactId>BMSReceiver</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<configuration>
+			<archive>
+			  <manifest>
+			    <addClasspath>true</addClasspath>
+			    <classpathPrefix>lib/</classpathPrefix>
+			    <mainClass>batteryevaluator.BatteryPropertyReceiverService</mainClass>
+			  </manifest>
+			</archive>
+		</configuration>
 		<groupId>org.jacoco</groupId>
 		<artifactId>jacoco-maven-plugin</artifactId>
 		<version>0.8.2</version>
