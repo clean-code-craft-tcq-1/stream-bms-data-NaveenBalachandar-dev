@@ -38,8 +38,10 @@ jobs:
       run:  mvn -B package --file pom.xml -Dmaven.test.skip=true
       
     - name: Build C
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker Sender/*.c*
-      
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testcheckerNew Sender/*.c*
+   
+    - name: Run C
+      run: ./testcheckerNew
       
     - name: Piping
-      run: ./testchecker | java -jar target/BMSStreaming-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+      run: ./testcheckerNew | java -jar target/BMSStreaming-0.0.1-SNAPSHOT-jar-with-dependencies.jar
