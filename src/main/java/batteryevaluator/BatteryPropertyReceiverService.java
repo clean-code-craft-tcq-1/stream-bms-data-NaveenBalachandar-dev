@@ -9,7 +9,7 @@ import batteryevaluatorreporter.PropertyReporter;
 
 public class BatteryPropertyReceiverService {
 	public static void main(String args[]) {
-		System.out.println("I am gere!" + args);
+		System.out.println("I am gere!" + args.length);
 	
 		List<Float> socList = new ArrayList<Float>();
 		List<Float> chargeRateList = new ArrayList<Float>();
@@ -18,6 +18,7 @@ public class BatteryPropertyReceiverService {
         
 		 if (args.length > 0) {       
 			 	for (String consoleInput : args) {
+					System.out.println("I am again here!" + consoleInput);
 					String batteryProperties[] = consoleInput.split("; ");
 					socList.add(Float.valueOf(batteryProperties[0]));
 					chargeRateList.add(Float.valueOf(batteryProperties[1]));
