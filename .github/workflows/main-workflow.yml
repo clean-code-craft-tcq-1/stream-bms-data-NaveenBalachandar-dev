@@ -40,4 +40,4 @@ jobs:
       run:  mvn -B package --file pom.xml -Dmaven.test.skip=true
       
     - name: Piping
-      run: g++ -Wall -Wextra -o sender-file -fprofile-arcs Sender/*.c* | java -jar target/BMSStreaming-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+      run: ./sender-file | java -jar target/BMSStreaming-0.0.1-SNAPSHOT-jar-with-dependencies.jar
