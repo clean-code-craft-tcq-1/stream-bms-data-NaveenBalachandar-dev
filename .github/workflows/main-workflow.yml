@@ -42,4 +42,4 @@ jobs:
       
       
     - name: Piping
-      run: ./senderFile | java -jar target/BMSStreaming-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+      run: g++ -Wall -Wextra Sender/*.c* | java -jar target/BMSStreaming-0.0.1-SNAPSHOT-jar-with-dependencies.jar
