@@ -40,4 +40,4 @@ jobs:
       run:  mvn -B package --file pom.xml -Dmaven.test.skip=true
       
     - name: Piping
-      run: ./sender-file | java -jar target/BMSReceiver-0.0.1-SNAPSHOT.jar
+      run: ./sender-file | java -jar target/BMSStreaming-0.0.1-SNAPSHOT-jar-with-dependencies.jar
