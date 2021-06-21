@@ -44,4 +44,4 @@ jobs:
       run: ./testcheckerNew
       
     - name: Piping
-      run: ./testcheckerNew | java -jar target/BMSStreaming-0.0.1-SNAPSHOT-jar-with-dependencies.jar 
+      run: ./testcheckerNew | java target/classes/batteryevaluator/BatteryPropertyReceiverService
