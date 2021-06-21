@@ -38,7 +38,7 @@ jobs:
       run:  mvn -B package --file pom.xml -Dmaven.test.skip=true
       
     - name: Build C
-      run: g++ -Wall -Wextra -o senderFile Sender/*.c*
+      run: g++ -Wall -Wextra Sender/*.c*
       
       
     - name: Piping
