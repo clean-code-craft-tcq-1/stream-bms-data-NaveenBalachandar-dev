@@ -44,4 +44,4 @@ jobs:
       run: ./testcheckerNew
       
     - name: Piping
-      run: ./testcheckerNew | java src/main/java/batteryevaluator/BatteryPropertyReceiverService
+      run: ./testcheckerNew | java batteryevaluator/BatteryPropertyReceiverService
