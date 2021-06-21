@@ -34,7 +34,7 @@ jobs:
         retention-days: 1
         
     - name: Build C++
-      run: g++ -Wall -Wextra -o sender-file -fprofile-arcs Sender/*.c*
+      run: g++ -Wall -Wextra -o sender-file Sender/*.c*
       
     - name: Build main
       run:  mvn -B package --file pom.xml -Dmaven.test.skip=true
