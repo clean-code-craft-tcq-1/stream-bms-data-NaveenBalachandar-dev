@@ -40,4 +40,4 @@ jobs:
       run:  mvn -B package --file pom.xml -Dmaven.test.skip=true
       
     - name: Piping
-      run: ./sender-file | java -jar workflow-github-actions-1.0-SNAPSHOT.jar
+      run: ./sender-file | java -jar BMSReceiver-0.0.1-SNAPSHOT.jar
