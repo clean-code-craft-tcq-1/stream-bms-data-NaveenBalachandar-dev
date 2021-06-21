@@ -2,6 +2,8 @@ package batteryevaluator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.IOException;
 
 import batteryproperties.Battery;
 import batteryevaluatorreporter.ConsolePropertyReporter;
@@ -15,6 +17,24 @@ public class BatteryPropertyReceiverService {
 		List<Float> chargeRateList = new ArrayList<Float>();
 		Battery battery = new Battery();
         BatteryPropertyEvaluator propertyEvaluator = new BatteryPropertyEvaluator();
+		
+		 try {
+            // Wrap the System.in inside BufferedReader
+            // But do not close it in a finally block, as we 
+            // did no open System.in; enforcing the rule that
+            // he who opens it, closes it; leave the closing to the OS.
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            String line;
+            while ((line = in.readLine()) != null) {
+                // TODO: Handle input line
+		    System.out.println(line);
+            }
+
+            // Null was received, so loop was aborted.
+
+        } catch (IOException e) {
+            // TODO: Add error handler
+        }
         
 		 if (args.length > 0) {       
 			 	for (String consoleInput : args) {
