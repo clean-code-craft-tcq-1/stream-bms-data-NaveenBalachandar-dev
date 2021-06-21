@@ -9,7 +9,7 @@ import batteryevaluatorreporter.PropertyReporter;
 
 public class BatteryPropertyReceiverService {
 	public static void main(String args[]) {
-		System.out.println("I am gere!");
+		System.out.println("I am gere!" + args);
 	
 		List<Float> socList = new ArrayList<Float>();
 		List<Float> chargeRateList = new ArrayList<Float>();
