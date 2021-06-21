@@ -37,4 +37,6 @@ jobs:
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker Sender/*.c*
       
     - name: Build main
-      run: ./testchecker | mvn compile exec:java -Dexec.mainClass="batteryevaluator.BatteryPropertyReceiverService"
+      run: |
+         ./testchecker 
+         mvn compile exec:java -Dexec.mainClass="batteryevaluator.BatteryPropertyReceiverService"
